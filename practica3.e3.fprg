@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="practica3.e3"/>
+        <attribute name="authors" value="SEBASTIAN BLANCO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-06-07 08:33:01 PM"/>
+        <attribute name="created" value="U0VCQVNUSUFOIEJMQU5DTztTNEJBUy1TQ1JFRU47MjAyNi0wNi0wNzswODoxNzo1MyBQTTszMjYy"/>
+        <attribute name="edited" value="U0VCQVNUSUFOIEJMQU5DTztTNEJBUy1TQ1JFRU47MjAyNi0wNi0wNzswODozMzowMSBQTTsxOzMzNjE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numbers" type="Integer" array="True" size="15"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <output expression="&quot;Escribe 15 NUMEROS&quot;" newline="True"/>
+            <for variable="i" start="0" end="14" direction="inc" step="1">
+                <input variable="numbers[i]"/>
+            </for>
+            <output expression="&quot;LOS NUMEROS POSITIVOS SON &quot;&amp;positiveN(numbers)&amp;&quot;.&quot;&amp;tochar(13)&amp;&quot;LOS NUMEROS NEGATIVOS SON &quot;&amp;negativeN(numbers)&amp;&quot;.&quot;&amp;tochar(13)&amp;&quot;LOS NUMEROS NEUTROS (0) SON &quot;&amp;zeroN(numbers)&amp;&quot;.&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="negativeN" type="Integer" variable="suma">
+        <parameters>
+            <parameter name="numbers" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="suma, i" type="Integer" array="False" size=""/>
+            <assign variable="suma" expression="0"/>
+            <for variable="i" start="0" end="14" direction="inc" step="1">
+                <if expression="numbers[i] &lt; 0">
+                    <then>
+                        <assign variable="suma" expression="suma + 1"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+    <function name="positiveN" type="Integer" variable="suma">
+        <parameters>
+            <parameter name="numbers" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="suma, i" type="Integer" array="False" size=""/>
+            <assign variable="suma" expression="0"/>
+            <for variable="i" start="0" end="14" direction="inc" step="1">
+                <if expression="numbers[i] &gt; 0">
+                    <then>
+                        <assign variable="suma" expression="suma + 1"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+    <function name="zeroN" type="Integer" variable="suma">
+        <parameters>
+            <parameter name="numbers" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="suma, i" type="Integer" array="False" size=""/>
+            <assign variable="suma" expression="0"/>
+            <for variable="i" start="0" end="14" direction="inc" step="1">
+                <if expression="numbers[i] == 0">
+                    <then>
+                        <assign variable="suma" expression="suma + 1"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

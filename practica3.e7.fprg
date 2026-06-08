@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="practica3.e7"/>
+        <attribute name="authors" value="SEBASTIAN BLANCO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-06-08 12:15:44 AM"/>
+        <attribute name="created" value="U0VCQVNUSUFOIEJMQU5DTztTNEJBUy1TQ1JFRU47MjAyNi0wNi0wNzsxMTo0NjoyMCBQTTszMjUy"/>
+        <attribute name="edited" value="U0VCQVNUSUFOIEJMQU5DTztTNEJBUy1TQ1JFRU47MjAyNi0wNi0wODsxMjoxNTo0NCBBTTsxOzMzNDk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="words" type="Integer" array="True" size="10"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="9" direction="inc" step="1">
+                <output expression="&quot;Ingrese el numero &quot;&amp;i+1&amp;&quot;: &quot;" newline="False"/>
+                <input variable="words[i]"/>
+            </for>
+            <output expression="&quot;ORDEN ORIGINAL: &quot;" newline="True"/>
+            <call expression="original(words)"/>
+            <output expression="tochar(13)&amp;tochar(13)&amp;&quot;ORDEN INVERSO: &quot;" newline="True"/>
+            <call expression="reverses(words)"/>
+        </body>
+    </function>
+    <function name="reverses" type="None" variable="">
+        <parameters>
+            <parameter name="words" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="9" end="0" direction="dec" step="1">
+                <output expression="words[i]&amp;&quot; &quot;" newline="False"/>
+            </for>
+        </body>
+    </function>
+    <function name="original" type="None" variable="">
+        <parameters>
+            <parameter name="words" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="9" direction="inc" step="1">
+                <output expression="words[i]&amp;&quot; &quot;" newline="False"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

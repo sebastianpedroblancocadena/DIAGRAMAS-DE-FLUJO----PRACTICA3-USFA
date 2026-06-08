@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="practica3.e2"/>
+        <attribute name="authors" value="SEBASTIAN BLANCO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-06-07 04:14:53 PM"/>
+        <attribute name="created" value="U0VCQVNUSUFOIEJMQU5DTztTNEJBUy1TQ1JFRU47MjAyNi0wNi0wNzswMzo1MDozMyBQTTszMjUy"/>
+        <attribute name="edited" value="U0VCQVNUSUFOIEJMQU5DTztTNEJBUy1TQ1JFRU47MjAyNi0wNi0wNzswNDoxNDo1MyBQTTsxOzMzNjM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Election" type="Boolean" array="False" size=""/>
+            <declare name="numeros" type="Real" array="True" size="10"/>
+            <declare name="numeroAbuscar" type="Real" array="False" size=""/>
+            <declare name="Cantidad" type="Integer" array="False" size=""/>
+            <assign variable="Cantidad" expression="0"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <do expression="Election">
+                <output expression="&quot;NUMEROS&quot;" newline="True"/>
+                <for variable="i" start="0" end="9" direction="inc" step="1">
+                    <input variable="numeros[i]"/>
+                </for>
+                <output expression="&quot;NUMERO A BUSCAR: &quot;" newline="True"/>
+                <input variable="numeroAbuscar"/>
+                <for variable="i" start="0" end="9" direction="inc" step="1">
+                    <if expression="numeroAbuscar == numeros[i]">
+                        <then>
+                            <assign variable="Cantidad" expression="Cantidad + 1"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+                <if expression="Cantidad &gt; 0">
+                    <then>
+                        <if expression="Cantidad == 1">
+                            <then>
+                                <output expression="&quot;El numero &quot;&amp;numeroAbuscar&amp;&quot; si existe en el arreglo&quot;" newline="True"/>
+                                <output expression="&quot;Aparece 1 vez&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;El numero &quot;&amp;numeroAbuscar&amp;&quot; si existe en el arreglo&quot;" newline="True"/>
+                                <output expression="&quot;Aparece &quot;&amp;Cantidad&amp;&quot; veces&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <output expression="&quot;El numero &quot;&amp;numeroAbuscar&amp;&quot; NO existe en el arreglo&quot;" newline="True"/>
+                    </else>
+                </if>
+                <output expression="&quot;&#191;Quieres probar otro numero? (true o false)&quot;" newline="True"/>
+                <input variable="Election"/>
+            </do>
+        </body>
+    </function>
+</flowgorithm>

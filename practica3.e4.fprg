@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="practica3.e4"/>
+        <attribute name="authors" value="SEBASTIAN BLANCO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-06-07 08:44:46 PM"/>
+        <attribute name="created" value="U0VCQVNUSUFOIEJMQU5DTztTNEJBUy1TQ1JFRU47MjAyNi0wNi0wNzswODozMzowNSBQTTszMjU3"/>
+        <attribute name="edited" value="U0VCQVNUSUFOIEJMQU5DTztTNEJBUy1TQ1JFRU47MjAyNi0wNi0wNzswODo0NDo0NiBQTTsxOzMzNzI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numberss" type="Integer" array="True" size="10"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <output expression="&quot;ESCRIBE 10 NUMEROS PARA VER EL MAYOR Y MENOR&quot;" newline="True"/>
+            <for variable="i" start="0" end="9" direction="inc" step="1">
+                <input variable="numberss[i]"/>
+            </for>
+            <output expression="&quot;NUMERO MENOR: &quot;&amp;minor(numberss)&amp;tochar(13)&amp;&quot;NUMERO MAYOR: &quot;&amp;largest(numberss)" newline="True"/>
+        </body>
+    </function>
+    <function name="minor" type="Integer" variable="minorNumber">
+        <parameters>
+            <parameter name="numberss" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="minorNumber, i" type="Integer" array="False" size=""/>
+            <assign variable="minorNumber" expression="numberss[0]"/>
+            <for variable="i" start="0" end="9" direction="inc" step="1">
+                <if expression="numberss[i] &lt; minorNumber">
+                    <then>
+                        <assign variable="minorNumber" expression="numberss[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+    <function name="largest" type="Integer" variable="largestNumber">
+        <parameters>
+            <parameter name="numberss" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="largestNumber, i" type="Integer" array="False" size=""/>
+            <assign variable="largestNumber" expression="numberss[0]"/>
+            <for variable="i" start="0" end="9" direction="inc" step="1">
+                <if expression="numberss[i] &gt; largestNumber">
+                    <then>
+                        <assign variable="largestNumber" expression="numberss[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

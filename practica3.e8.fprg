@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="practica3.e8"/>
+        <attribute name="authors" value="SEBASTIAN BLANCO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-06-08 12:45:39 AM"/>
+        <attribute name="created" value="U0VCQVNUSUFOIEJMQU5DTztTNEJBUy1TQ1JFRU47MjAyNi0wNi0wODsxMjoxODoxOCBBTTszMjQ1"/>
+        <attribute name="edited" value="U0VCQVNUSUFOIEJMQU5DTztTNEJBUy1TQ1JFRU47MjAyNi0wNi0wODsxMjo0NTozOSBBTTsxOzMzNTY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="option" type="Integer" array="False" size=""/>
+            <do expression="NOT(option ==4)">
+                <output expression="&quot;==MENU==&quot;&amp;tochar(13)&amp;&quot;1. Sumar dos numeros&quot;&amp;tochar(13)&amp;&quot;2. Mostrar la tabla de multiplicar&quot;&amp;tochar(13)&amp;&quot;3. Verificar si un numero es par&quot;&amp;tochar(13)&amp;&quot;4. Salir&quot;" newline="True"/>
+                <input variable="option"/>
+                <while expression="option &gt;4 or option&lt;1">
+                    <output expression="&quot;&gt;&gt;&gt;&gt;NUMERO INVALIDO EN EL SISTEMA&quot;&amp;tochar(13)&amp;&quot;INGRESE OTRA VEZ EL NUMERO: &quot;" newline="True"/>
+                    <input variable="option"/>
+                </while>
+                <if expression="option == 1">
+                    <then>
+                        <call expression="add"/>
+                    </then>
+                    <else>
+                        <if expression="option == 2">
+                            <then>
+                                <call expression="multiply"/>
+                            </then>
+                            <else>
+                                <if expression="option == 3">
+                                    <then>
+                                        <call expression="paird"/>
+                                    </then>
+                                    <else>
+                                        <if expression="option ==4">
+                                            <then>
+                                                <call expression="leave"/>
+                                            </then>
+                                            <else>
+                                                <output expression="&quot;ERROR 404&quot;" newline="True"/>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </do>
+        </body>
+    </function>
+    <function name="add" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num1, num2" type="Integer" array="False" size=""/>
+            <output expression="&quot;INGRESE EL PRMER NUMERO: &quot;" newline="False"/>
+            <input variable="num1"/>
+            <output expression="&quot;INGRESE EL SEGUNDO NUMERO: &quot;" newline="False"/>
+            <input variable="num2"/>
+            <output expression="&quot;SUMA: &quot;&amp;num1+num2" newline="True"/>
+        </body>
+    </function>
+    <function name="leave" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;GRACIAS POR USAR EL SISTEMA :)&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="multiply" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="number, i" type="Integer" array="False" size=""/>
+            <output expression="&quot;Ingresa el numero para ver su tabla de multiplicar: &quot;" newline="False"/>
+            <input variable="number"/>
+            <for variable="i" start="1" end="10" direction="inc" step="1">
+                <output expression="number&amp;&quot; x &quot;&amp;i&amp;&quot; = &quot;&amp;number *i" newline="True"/>
+            </for>
+        </body>
+    </function>
+    <function name="paird" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="pairr" type="Integer" array="False" size=""/>
+            <output expression="&quot;Escribe un numero para comprobar si es par: &quot;" newline="False"/>
+            <input variable="pairr"/>
+            <if expression="pairr % 2 == 0">
+                <then>
+                    <output expression="&quot;ES PAR&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;ES IMPAR&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

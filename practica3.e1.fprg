@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="practica3.e1"/>
+        <attribute name="authors" value="SEBASTIAN BLANCO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-06-07 03:50:12 PM"/>
+        <attribute name="created" value="U0VCQVNUSUFOIEJMQU5DTztTNEJBUy1TQ1JFRU47MjAyNi0wNi0wNzswMzoyNjo1MSBQTTszMjU1"/>
+        <attribute name="edited" value="U0VCQVNUSUFOIEJMQU5DTztTNEJBUy1TQ1JFRU47MjAyNi0wNi0wNzswMzo1MDoxMiBQTTsxOzMzNTc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nota" type="Integer" array="True" size="5"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <output expression="&quot;NOTAS DE 5 ESTUDIANTES&quot;" newline="True"/>
+            <for variable="i" start="0" end="4" direction="inc" step="1">
+                <output expression="&quot;Ingrese la nora de el estudiante &quot;&amp;i+1&amp;&quot;: &quot;" newline="True"/>
+                <input variable="nota[i]"/>
+                <if expression="nota[i] &lt; 0 or nota[i] &gt; 100">
+                    <then>
+                        <output expression="&quot;Esa nota no es valida en el sistema&quot;&amp;tochar(13)&amp;&quot;Ingrese la nota de el estudiante &quot;&amp;i+1&amp;&quot;: &quot;" newline="True"/>
+                        <input variable="nota[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <declare name="NotaMasBaja" type="Integer" array="False" size=""/>
+            <declare name="NotaMasAlta" type="Integer" array="False" size=""/>
+            <assign variable="NotaMasBaja" expression="nota[0]"/>
+            <assign variable="NotaMasAlta" expression="nota[0]"/>
+            <for variable="i" start="0" end="4" direction="inc" step="1">
+                <if expression="NotaMasAlta &lt; nota[i]">
+                    <then>
+                        <assign variable="NotaMasAlta" expression="nota[i]"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="NotaMasBaja&gt; nota[i]">
+                    <then>
+                        <assign variable="NotaMasBaja" expression="nota[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <output expression="&quot;PROMEDIO GENERAL: &quot;&amp;Promedio(nota)&amp;tochar(13)&amp;&quot;NOTA MAS BAJA: &quot;&amp;NotaMasBaja&amp;tochar(13)&amp;&quot;NOTA MAS ALTA: &quot;&amp;NotaMasAlta" newline="True"/>
+        </body>
+    </function>
+    <function name="Promedio" type="Real" variable="suma">
+        <parameters>
+            <parameter name="nota" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="suma" type="Real" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="suma" expression="0"/>
+            <for variable="i" start="0" end="4" direction="inc" step="1">
+                <assign variable="suma" expression="suma + nota[i]"/>
+            </for>
+            <assign variable="suma" expression="suma /5"/>
+        </body>
+    </function>
+</flowgorithm>

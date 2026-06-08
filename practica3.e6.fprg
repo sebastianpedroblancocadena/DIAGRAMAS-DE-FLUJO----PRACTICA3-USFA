@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="practica3.e6"/>
+        <attribute name="authors" value="SEBASTIAN BLANCO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-06-07 11:46:16 PM"/>
+        <attribute name="created" value="U0VCQVNUSUFOIEJMQU5DTztTNEJBUy1TQ1JFRU47MjAyNi0wNi0wNzsxMDozNzo1MiBQTTszMjU2"/>
+        <attribute name="edited" value="U0VCQVNUSUFOIEJMQU5DTztTNEJBUy1TQ1JFRU47MjAyNi0wNi0wNzsxMTo0NjoxNiBQTTsxOzMzNjU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="sell" type="Integer" array="True" size="7"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="6" direction="inc" step="1">
+                <output expression="&quot;Registre la venta de el dia &quot;&amp;i+1&amp;&quot;: &quot;" newline="False"/>
+                <input variable="sell[i]"/>
+            </for>
+            <output expression="&quot;Venta total: &quot;&amp;total(sell)&amp;&quot;Bs&quot;&amp;tochar(13)&amp;&quot;Promedio de ventas: &quot;&amp;average(sell)&amp;&quot;Bs&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="average" type="Real" variable="sells">
+        <parameters>
+            <parameter name="sell" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="maths" type="Real" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="maths" expression="0"/>
+            <declare name="sells" type="Real" array="False" size=""/>
+            <for variable="i" start="0" end="6" direction="inc" step="1">
+                <assign variable="maths" expression="maths + sell[i]"/>
+            </for>
+            <assign variable="sells" expression="maths / 7"/>
+        </body>
+    </function>
+    <function name="total" type="Real" variable="maths">
+        <parameters>
+            <parameter name="sell" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="maths" type="Real" array="False" size=""/>
+            <assign variable="maths" expression="0"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="6" direction="inc" step="1">
+                <assign variable="maths" expression="maths + sell[i]"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
